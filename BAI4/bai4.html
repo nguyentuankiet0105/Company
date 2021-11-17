@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Document</title>
+</head>
+
+<body>
+  <div class="container">
+
+    <div class="slides fade">
+      <img src="one.jpg"  class="img-item">
+    </div>
+
+    <div class="slides fade">
+      <img src="two.jpg"  class="img-item">
+    </div>
+
+    <div class="slides fade">
+      <img src="three.jpg"  class="img-item">
+    </div>
+    <div class="slides fade">
+      <img src="four.jpg"  class="img-item">
+    </div>
+    <div class="slides fade">
+      <img src="five.jpg"  class="img-item">
+    </div>
+    <div class="slides fade">
+      <img src="six.jpg"  class="img-item">
+    </div>
+
+    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+  </div>
+  <br>
+
+  <div class="choiceList" >
+    <span class="dot" onclick="currentSlide(1)"></span>
+    <span class="dot" onclick="currentSlide(2)"></span>
+    <span class="dot" onclick="currentSlide(3)"></span>
+    <span class="dot" onclick="currentSlide(4)"></span>
+    <span class="dot" onclick="currentSlide(5)"></span>
+    <span class="dot" onclick="currentSlide(6)"></span>
+  </div>
+  <script src="main.js"></script>
+</body>
+</html>
