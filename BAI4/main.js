@@ -1,7 +1,7 @@
 var index = 1;
-function handelSlides(choice) {
-  var slides = document.querySelectorAll('.slides');
-  var dots = document.querySelectorAll('.dot');
+function handleSlides(choice) {
+  const slides = document.querySelectorAll('.slides');
+  const dots = document.querySelectorAll('.dot');
   // click button next ở slide cuối cùng thì sẽ chuyển về lại slide đầu tiên
   if (choice > slides.length) {
     index = 1;
@@ -20,12 +20,12 @@ function handelSlides(choice) {
   dots[index - 1].className += ' active';
 }
 
-handelSlides(index);
+handleSlides(index);
 
 function plusSlides(nextIndex) {
-  handelSlides((index += nextIndex));
+  handleSlides((index += nextIndex));
 }
 
 function currentSlide(currentIndex) {
-  handelSlides((index = currentIndex));
+  handleSlides((index = currentIndex));
 }

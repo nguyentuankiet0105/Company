@@ -74,6 +74,9 @@
   animation-name: fade;
   animation-duration: 1.5s;
 }
+.img-item{
+  width:100%;
+}
 
 img {
   height: 600px;
