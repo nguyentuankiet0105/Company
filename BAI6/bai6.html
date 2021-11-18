@@ -45,12 +45,12 @@
           </div>
         </div>
       </div>
-      <div class="col-md-8">
-        <table class="table table-bordered" id="tableList">
+      <div class="col-md-8" style="overflow-x:auto;  overflow-y:auto ">
+        <table class="table table-bordered" id="tableList" >
           <thead class="thead-dark">
             <tr>
               <th scope="col justify-content-center">
-                <input type="checkbox" class="checkboxInput">
+                <input type="checkbox" id="checkboxAll" onclick="onSelectCkb()" >
               </th>
               <th scope="col ">ID</th>
               <th scope="col">Name</th>
@@ -60,7 +60,6 @@
             </tr>
           </thead>
           <tbody id="show">
-
           </tbody>
         </table>
         <button type="button" class="btn btn-danger" onclick="deleteSelect()">Delete</button>

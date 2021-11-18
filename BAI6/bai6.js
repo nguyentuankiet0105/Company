@@ -11,19 +11,19 @@ function addData() {
   const errName = document.getElementById('invalid_Name');
   const errPhone = document.getElementById('invalid_Phone');
   const errEmail = document.getElementById('invalid_Email');
+  let checkValidate = true;
 
-  var newName = addName(name, errName, 'Name');
-  var newEmail = addEmail(email, errEmail, 'Email');
-  var newPhone = addPhone(phone, errPhone, 'Phone');
+  checkValidate = addName(name, errName, 'Name');
+  checkValidate = addEmail(email, errEmail, 'Email');
+  checkValidate = addPhone(phone, errPhone, 'Phone');
 
-  console.log(newName, newEmail, newPhone);
   var user = {
     name: formatName(name),
     phone: formatPhone(phone),
     email: email,
   };
   let list = localStorage.getItem('data') ? JSON.parse(localStorage.getItem('data')) : [];
-  if (newName && newEmail && newPhone) {
+  if (checkValidate) {
     list.push(user);
     localStorage.setItem('data', JSON.stringify(list));
     document.getElementById('name').value = '';
@@ -39,13 +39,12 @@ function showData() {
   if (list.length === 0) {
     var not = (document.getElementById('show').innerHTML = 'data is empty !!!');
     not.style.fontWeight = 'bold';
-    return false;
+    return;
   }
 
   var view = '<table border="1" cellpadding="5"><tbody>';
   list.forEach(function (user, index) {
     let id = index;
-    index++;
     view += `<tr id="#edit-user-${id}">
      <th scope="row"><input type="checkbox" class="checkboxInput"></th>
      <td>${id + 1}</td>
@@ -77,23 +76,40 @@ function deletePerson(id) {
 }
 
 function deleteSelect() {
-  let list = localStorage.getItem('data') ? JSON.parse(localStorage.getItem('data')) : [];
-  const checkboxInput = document.getElementsByClassName('checkboxInput');
-
-  for (let i = 0; i < checkboxInput.length; ++i) {
+  const checkboxAll = document.getElementById('checkboxAll');
+  const checkboxInput = document.querySelectorAll('.checkboxInput');
+  // document.getElementById('tableList').deleteRow(2);
+  for (let i = 0; i < checkboxInput.length; i++) {
     if (checkboxInput[i].checked == true) {
-      list.splice(checkboxInput[i], 1);
-      localStorage.setItem('data', JSON.stringify(list));
-      showData();
+      document.getElementById('tableList').deleteRow(i + 1);
+      checkboxAll.checked = false;
+      // i--;
+    } else {
+      checkboxAll.checked = false;
     }
-    console.log(checkboxInput.length);
   }
 }
+function onSelectCkb() {
+  const checkboxAll = document.getElementById('checkboxAll');
+  const checkboxInput = document.querySelectorAll('.checkboxInput');
+  for (let i = 0; i < checkboxInput.length; i++) {
+    if (checkboxAll.checked == true) {
+      checkboxInput[i].checked = true;
+    } else {
+      checkboxInput[i].checked = false;
+    }
+  }
+}
+
+//  getElementById checkboxAll event onclick
+// getclass checkboxInput
+// For ->> 0 -> checkboxInput.length ->> if(checkboxAll.checked == true){
+//checkboxInput[i].checked = true; } else{checkboxInput[i].checked = false;}
 
 // functions handle double click ------------------------------------------------------------------
 // function handel double click constructure
 function handleDbClick(selector) {
-  selector.ondblclick = function (e) {
+  selector.onclick = function (e) {
     e.target.setAttribute('contenteditable', true);
   };
 }
@@ -130,7 +146,7 @@ function handleElementValue() {
       handleDbClick(editEmail);
     });
   }
-};
+}
 handleElementValue();
 
 //--------- check validate function constructure---------------------------------
