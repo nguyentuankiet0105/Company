@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <title>bai 6</title>
+</head>
+
+<body>
+  <div class="container">
+    <div class="row justify-content-md-start">
+      <div class="col-md-4">
+        <form autocomplete="on">
+
+          <div class="form-group row">
+            <label for="staticEmail" class="col-sm-3 col-form-label">Name: </label>
+            <div class="col-sm-9">
+              <input type="text" class="form-control" id="name" placeholder="enter name ..">
+              <span id="invalid_Name" class="text-danger font-weight-bold"></span>
+            </div>
+          </div>
+
+          <div class="form-group row">
+            <label for="staticEmail" class="col-sm-3 col-form-label">Phone: </label>
+            <div class="col-sm-9">
+              <input type="tel" class="form-control" id="phone" placeholder="enter phone ..">
+              <span id="invalid_Phone" class="text-danger font-weight-bold"></span>
+            </div>
+          </div>
+
+          <div class="form-group row">
+            <label for="staticEmail" class="col-sm-3 col-form-label">Email: </label>
+            <div class="col-sm-9">
+              <input type="text" class="form-control" id="email" placeholder="enter email ..">
+              <span id="invalid_Email" class="text-danger font-weight-bold"></span>
+            </div>
+          </div>
+        </form>
+        <div class="form-group row">
+          <div class="col-sm-9">
+            <button class="btn btn-success" onclick="addData()">Add</button>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-8" style="overflow-x:auto;  overflow-y:auto ">
+        <table class="table table-bordered" id="tableList" >
+          <thead class="thead-dark">
+            <tr>
+              <th scope="col justify-content-center">
+                <input type="checkbox" id="checkboxAll" onclick="onSelectCkb()" >
+              </th>
+              <th scope="col ">ID</th>
+              <th scope="col">Name</th>
+              <th scope="col ">Phone</th>
+              <th scope="col ">Email</th>
+              <th scope="col ">Action</th>
+            </tr>
+          </thead>
+          <tbody id="show">
+          </tbody>
+        </table>
+        <button type="button" class="btn btn-danger" onclick="deleteSelect()">Delete</button>
+
+      </div>
+
+    </div>
+  </div>
+  <script src="bai6.js"></script>
+</body>
+</html>
