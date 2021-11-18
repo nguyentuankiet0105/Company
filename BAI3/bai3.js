@@ -124,6 +124,7 @@ window.addEventListener('load', function () {
     isEnabled(sendBtn2, text);
   });
 
+  
   //   reset btn data
   (function () {
     btnResetInput1.addEventListener('click', function () {
