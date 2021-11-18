@@ -1,9 +1,11 @@
+body{
+  background: #efecec;
+}
 .container {
   display: flex;
   flex-direction: column;
   position: relative;
-  margin-left: 30%;
-  margin-top: 5%;
+  margin: 20px auto;  
 }
 .wrap {
   display: flex;
@@ -16,15 +18,15 @@
   border-bottom: solid 1px;
   display: flex;
   justify-content: flex-end;
+  height: 58px;
 }
 .countdown p {
   margin-right: 10px;
 }
 
 .qaGroup {
-  padding: 10px 30px;
+  padding: 10px 0;
 }
-/* scores */
 .scores {
   border: solid 1px;
   height: 60px;
@@ -32,23 +34,36 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-left: 30px;
   border-radius: 10px;
+}
+#score{
+  font-size: 24px;
 }
 .correct-answer {
   border: solid 1px;
   width: 40%;
   margin-top: 40px;
+}
+.correct-answer h3{
+  font-size: 24px;
 
 }
-.correct-answer h3,
-p {
-  margin-left: 30px;
+.qaGroup_Item h3 {
+  font-size: 20px;
 }
-
+.scores h3{
+  font-size: 24px;
+}
 .error {
   color: red;
 }
 #countdownTimer{
   color: green;
+  font-size: 20px;
+}
+#showTime{
+  font-size: 24px;
+}
+span{
+  font-size: 16px;
 }

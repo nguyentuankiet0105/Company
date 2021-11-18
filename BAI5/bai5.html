@@ -7,13 +7,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>bai 5</title>
     <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+
 </head>
 
 <body>
 
     <div class="container">
-        <div class="wrap">
-            <div class="question">
+        <div class="wrap ">
+            <div class="question col-md-6">
                 <div class="countdown">
                     <h3 id="showTime">countdown time <span id="countdownTimer"> 0 </span> </h3>
                 </div>
@@ -22,93 +24,94 @@
                         <h3>Câu 1: Câu hỏi số 1</h3>
                         <div class="answer_item">
                             <input id="choice_item1" type="checkbox" name="a1" valid="valid">
-                            <span> ĐÚNG</span>
+                            <span>A. ĐÚNG</span>
                         </div>
                         <div class="answer_item">
                             <input id="choice_item2" type="checkbox" name="a1" valid="valid">
-                            <span>ĐÚNG</span>
+                            <span>B. ĐÚNG</span>
                         </div>
                         <div class="answer_item">
                             <input id="choice_item3" type="checkbox" name="a1">
-                            <span>sai</span>
+                            <span>C. sai</span>
                         </div>
                         <div class="answer_item">
                             <input id="choice_item4" type="checkbox" name="a1">
-                            <span>sai</span>
+                            <span>D. sai</span>
                         </div>
                     </div>
                     <div class="qaGroup_Item  ">
                         <h3>Câu 2: Câu hỏi số 2 ?</h3>
                         <div class="answer_item">
                             <input id="choice_item5" type="checkbox" name="a2" value="2">
-                            <span> sai </span>
+                            <span>A. sai </span>
                         </div>
                         <div class="answer_item">
                             <input id="choice_item6" type="checkbox" name="a2" valid="valid">
-                            <span> ĐÚNG </span>
+                            <span>B. ĐÚNG </span>
                         </div>
                         <div class="answer_item">
                             <input id="choice_item7" type="checkbox" name="a2">
-                            <span> sai </span>
+                            <span>C. sai </span>
                         </div>
                         <div class="answer_item">
                             <input id="choice_item8" type="checkbox" name="a2">
-                            <span> sai </span>
+                            <span>D. sai </span>
                         </div>
                     </div>
                     <div class="qaGroup_Item ">
                         <h3>Câu 3: Câu hỏi số 3 ?</h3>
                         <div class="answer_item">
                             <input id="choice_item9" type="checkbox" name="a3">
-                            <span> sai </span>
+                            <span>A. sai </span>
                         </div>
                         <div class="answer_item">
                             <input id="choice_item10" type="checkbox" name="a3">
-                            <span> sai </span>
+                            <span>B. sai </span>
                         </div>
                         <div class="answer_item">
                             <input id="choice_item11" type="checkbox" name="a3" valid="valid">
-                            <span> ĐÚNG </span>
+                            <span>C. ĐÚNG </span>
                         </div>
                         <div class="answer_item">
                             <input id="choice_item12" type="checkbox" name="a3">
-                            <span> sai </span>
+                            <span>D. sai </span>
                         </div>
                     </div>
                     <div class="qaGroup_Item ">
                         <h3>Câu 4: Câu hỏi số 4 ?</h3>
                         <div class="answer_item">
                             <input id="choice_item13" type="checkbox" name="a4">
-                            <span> sai </span>
+                            <span>A. sai </span>
                         </div>
                         <div class="answer_item">
                             <input id="choice_item14" type="checkbox" name="a4">
-                            <span> sai </span>
+                            <span>B. sai </span>
                         </div>
                         <div class="answer_item">
                             <input id="choice_item15" type="checkbox" name="a4">
-                            <span> sai </span>
+                            <span>C. sai </span>
                         </div>
                         <div class="answer_item">
                             <input id="choice_item16" type="checkbox" name="a4" valid="valid">
-                            <span> ĐÚNG </span>
+                            <span>D. ĐÚNG </span>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="scores">
-                <h3>Điểm <span id="score">0</span> </h3>
+            <div class="result col-md-6">
+                <div class="scores col-md-12 ">
+                    <h3>Điểm <span id="score">0</span> </h3>
+                </div>
+                <div class="correct-answer col-md-12">
+                    <h3>Đáp Án:</h3>
+                    <p> 1: <span id="result1">...</span></p>
+                    <p> 2: <span id="result2">...</span></p>
+                    <p> 3: <span id="result3">...</span></p>
+                    <p> 4: <span id="result4">...</span></p>
+                </div>
             </div>
-        </div>
-        <div class="correct-answer">
-            <h3>Đáp Án:</h3>
-            <p> 1: <span id="result1">...</span></p>
-            <p> 2: <span id="result2">...</span></p>
-            <p> 3: <span id="result3">...</span></p>
-            <p> 4: <span id="result4">...</span></p>
         </div>
     </div>
     <script src="bai5.js"></script>
 </body>
-
 </html>

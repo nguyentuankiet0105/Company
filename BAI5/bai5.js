@@ -9,9 +9,9 @@ var count = 0;
 var time = 15; 
 var countdownLocal = localStorage.getItem('countdownLocal');
 if (countdownLocal == null) {
-  var new_countdown = new Date().getTime() + (time + 2) * 1000;
-  time = new_countdown;
-  localStorage.setItem('countdownLocal', new_countdown);
+  var countdownNew = new Date().getTime() + (time + 2) * 1000;
+  time = countdownNew;
+  localStorage.setItem('countdownLocal', countdownNew);
 } else {
   time = countdownLocal;
 }
@@ -21,7 +21,7 @@ var downloadTimer = setInterval(() => {
   var now = new Date().getTime();
   var distance = time - now;
   var counter = Math.floor((distance % (1000 * 60)) / 1000);
-  timer.innerHTML = counter + ' s';
+  timer.innerHTML = counter + 's';
   if (counter <= 0) {
     clearInterval(downloadTimer);
     localStorage.removeItem('countdownLocal');
@@ -38,6 +38,7 @@ var downloadTimer = setInterval(() => {
       if (item.checked === true && valid === 'valid') {
         scoreCount += 20;
         score.innerHTML = scoreCount;
+        if(valid !== 'valid'){}
       }
       if (item.checked === true && valid !== 'valid') {
         item.nextElementSibling.classList.add('error');
@@ -48,12 +49,12 @@ var downloadTimer = setInterval(() => {
 
 // handle save local storage----------------------------------------------------------------
 document.addEventListener('DOMContentLoaded', function () {
-  var checkbox = document.querySelectorAll("input[type='checkbox']");
+  var checkbox = document.querySelectorAll('checkbox');
   for (var item of checkbox) {
     //check id in local storage ----------------------------------------------------
     item.addEventListener('click', function () {
       if (localStorage.choice_item) {
-        if ((localStorage.choice_item = localStorage.choice_item.indexOf(this.id + ',') == -1)) {
+        if ((localStorage.choice_item.indexOf(this.id + ',') == -1)) {
           localStorage.choice_item + this.id + ',';
         } else {
           localStorage.choice_item.replace(this.id + ',', '');
@@ -65,7 +66,12 @@ document.addEventListener('DOMContentLoaded', function () {
   }
   if (localStorage.choice_item) {
     for (var item of checkbox) {
-      item.checked = localStorage.choice_item.indexOf(item.id + ',') != -1 ? true : false;
+      if(localStorage.choice_item.indexOf(item.id + ',') != -1){
+        return true;
+      }
+      else{
+        return false;
+      }
     }
   }
 });
